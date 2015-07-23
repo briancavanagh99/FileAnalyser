@@ -10,7 +10,7 @@ class selectfile:  # class for first screen
     theLabel = Label(root, text="Select Screen")
     theLabel.pack()  # packs the text from the previous line into the screen
 
-    fileselectbox =
+    fileselectbox =     #create a file browser and selection
 
     framesize = Frame(height=550, width=950, bd=2, relief=SUNKEN) #internal content frame details
     framesize.pack(fill=X, padx=5, pady=5)
