@@ -20,7 +20,6 @@ class selectfile:  # class for first screen
 
 
 
-
     root.mainloop()  # this keeps the box open and provides the X or minimize
 
 
