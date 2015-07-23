@@ -26,4 +26,4 @@ class selectfile:  # class for first screen
 
 
 
-test = selectfile()
+testrun = selectfile() #THIS IS A TEST RUN OF THIS CLASS
