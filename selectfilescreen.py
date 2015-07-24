@@ -5,19 +5,26 @@ from tkinter import *
 
 class selectfile:  #class for first screen
 
-    root = Tk()  # create the object "root" from the constructor Tk(), Tk() is a Tkinter class
-    root.geometry("1000x600+200+50") #main box position
-    theLabel = Label(root, text="Select Screen")
-    theLabel.pack()  # packs the text from the previous line into the screen
 
-    fileselectbox = askopenfile()   #create a file browser and selection
+    def filesselectionscreen:
+        root = Tk()  # create the object "root" from the constructor Tk(), Tk() is a Tkinter class
+        root.geometry("1000x600+200+50") #main box position
+        theLabel = Label(root, text="Select Screen")
+        theLabel.pack()  # packs the text from the previous line into the screen
 
-    framesize = Frame(height=550, width=950, bd=2, relief=SUNKEN) #internal content frame details
-    framesize.pack(fill=X, padx=5, pady=5)
+        fileselectbox = askopenfile()   #create a file browser and selection area/box
+
+        framesize = Frame(height=550, width=950, bd=2, relief=SUNKEN) #internal 'content frame' details
+        framesize.pack(fill=X, padx=5, pady=5)
 
 
-    root.mainloop()  # this keeps the box open and provides the X or minimize
 
+
+
+    def fileselectionbox:
+
+
+root.mainloop()  # this keeps the box open and provides the X or minimize, SHOULD THIS ALWAYS BE OUTSIDE THE 'DEF'
 
 
 testrun = selectfile() #THIS IS A TEST RUN OF THIS CLASS
