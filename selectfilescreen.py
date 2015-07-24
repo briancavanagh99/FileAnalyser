@@ -1,12 +1,10 @@
-
-
 __author__ = 'cavanaghb'
 
 
 from tkinter import *
 from tkinter import filedialog
 
-class selectfile:  #class for first screen
+class SelectFile:  #class for first screen
 
 
         def __init__(self, master):  #this function creates the buttons on the first screen and points the command at the open file function
@@ -20,8 +18,8 @@ class selectfile:  #class for first screen
 
         def getfile(self):   #this is the open file function
 
-            mainbox.selectedfile = filedialog.askopenfilename(filetypes=[('All files', '*.*')])  #Add file types for more specification
-
+            selectedfile = filedialog.askopenfilename(filetypes=[('All files', '*.*')])  #'selectedfile' is the file as an arguement
+            print(selectedfile)     #REMOVABLE TEST TO CHECK THE FILE OPENS CORRECTLY
 
 
 
