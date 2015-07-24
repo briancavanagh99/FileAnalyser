@@ -12,7 +12,7 @@ class selectfile:  #class for first screen
             self.filebutton = Button(master, text="Open Files for Selection button", command=self.getfile)
             self.filebutton.pack()
 
-            self.quitbutton =
+            self.quitbutton = Button(master, text="Leave the application", command=self.getfile)
             self.quitbutton.pack()
 
 
