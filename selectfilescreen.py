@@ -2,11 +2,8 @@ __author__ = 'cavanaghb'
 
 from tkinter import *
 
-
 class selectfile:  #class for first screen
 
-
-    def filesselectionscreen:
         root = Tk()  # create the object "root" from the constructor Tk(), Tk() is a Tkinter class
         root.geometry("1000x600+200+50") #main box position
         theLabel = Label(root, text="Select Screen")
@@ -17,14 +14,7 @@ class selectfile:  #class for first screen
         framesize = Frame(height=550, width=950, bd=2, relief=SUNKEN) #internal 'content frame' details
         framesize.pack(fill=X, padx=5, pady=5)
 
-
-
-
-
-    def fileselectionbox:
-
-
-root.mainloop()  # this keeps the box open and provides the X or minimize, SHOULD THIS ALWAYS BE OUTSIDE THE 'DEF'
+        root.mainloop()  # this keeps the box open and provides the X or minimize, needs to be in the same 'def' as 'root'
 
 
 testrun = selectfile() #THIS IS A TEST RUN OF THIS CLASS
