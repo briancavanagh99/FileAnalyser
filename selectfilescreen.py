@@ -1,3 +1,4 @@
+from tkinter import filedialog
 
 __author__ = 'cavanaghb'
 
@@ -12,14 +13,14 @@ class selectfile:  #class for first screen
             self.filebutton = Button(master, text="Open Files for Selection button", command=self.getfile)
             self.filebutton.pack()
 
-            self.quitbutton = Button(master, text="Leave the application", command=self.getfile)
+            self.quitbutton = Button(master, text="Quit")# command=quit(mainbox))
             self.quitbutton.pack()
 
 
 
         def getfile(self):
 
-            Button = askopenfilename(title="choose your file", filetypes=[("jpeg files", "*.jpg"), ("all files", "*.*")])
+            mainbox.selectedfile = filedialog.askopenfilename(filetypes=[('GIF FILES', '*.gif')])
 
 
 #BEGIN - CREATE THE MAIN WINDOW
