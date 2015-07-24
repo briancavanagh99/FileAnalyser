@@ -1,14 +1,15 @@
-from tkinter import filedialog
+
 
 __author__ = 'cavanaghb'
 
 
 from tkinter import *
+from tkinter import filedialog
 
 class selectfile:  #class for first screen
 
 
-        def __init__(self, master):
+        def __init__(self, master):  #this function creates the buttons on the first screen and points the command at the open file function
 
             self.filebutton = Button(master, text="Open Files for Selection button", command=self.getfile)
             self.filebutton.pack()
@@ -17,10 +18,11 @@ class selectfile:  #class for first screen
             self.quitbutton.pack()
 
 
+        def getfile(self):   #this is the open file function
 
-        def getfile(self):
+            mainbox.selectedfile = filedialog.askopenfilename(filetypes=[('All files', '*.*')])  #Add file types for more specification
 
-            mainbox.selectedfile = filedialog.askopenfilename(filetypes=[('GIF FILES', '*.gif')])
+
 
 
 #BEGIN - CREATE THE MAIN WINDOW
