@@ -1,5 +1,7 @@
 __author__ = 'cavanaghb'
 
+#THIS MAY BE ABSORBED AND DELETED
+
 
 from tkinter import *
 from tkinter import filedialog
