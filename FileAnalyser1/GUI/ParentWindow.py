@@ -26,6 +26,7 @@ class mainwindow(tkinter.Tk):
 
         self.grid_columnconfigure(0, weight=1)
 
+
     def getfile(self):   #this is the open file function linked back to the open file button
 
 #Need to create a binary and hex conversion module, this will be used to convert and save the data into the newly created files
