@@ -4,7 +4,9 @@ __author__ = 'cavanaghb'
 from tkinter import *
 from tkinter import filedialog
 import tempfile
+
 import binascii
+
 
 class SelectFile:  #class for first screen
 
