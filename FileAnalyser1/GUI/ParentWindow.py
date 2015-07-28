@@ -5,7 +5,9 @@ __author__ = 'cavanaghb'
 import tkinter
 from tkinter import filedialog
 import tempfile
-import shutil
+import binaryconvert
+import hexconvert
+
 
 class mainwindow(tkinter.Tk):
     def __init__(self, parent):
@@ -24,13 +26,19 @@ class mainwindow(tkinter.Tk):
 
         self.grid_columnconfigure(0, weight=1)
 
-    def getfile(self):   #this is the open file function
+    def getfile(self):   #this is the open file function linked back to the open file button
 
+#Need to create a binary and hex conversion module, this will be used to convert and save the data into the newly created files
+        binaryconvert.bincon()
+        hexconvert.hexcon()
+
+
+        newbinaryfile = open('binaryfile.txt', 'w+')              #create a new file to transfer the data to
+        newhexfile = open('hexfile.txt', 'w+')
         selectedfile = filedialog.askopenfilename(filetypes=[('All files', '*.*')])
-        temp = tempfile.TemporaryFile()
-        temp.write(selectedfile)
+        #temp = tempfile.TemporaryFile(mode='w')
+        newfile.write(selectedfile)
 
-        print(selectedfile)               #test to confirm creation of tempfile
 
 
 if __name__ == "__main__":
