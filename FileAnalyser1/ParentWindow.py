@@ -25,9 +25,9 @@ class MainWindow(tkinter.Frame):
         tab2 = ttk.Frame(newnotebook)
         tab3 = ttk.Frame(newnotebook)
 
-        newnotebook.add(tab1, text="Tab One")
-        newnotebook.add(tab2, text="Tab Two")
-        newnotebook.add(tab3, text="Tab Three")
+        newnotebook.add(tab1, text="File Details")
+        newnotebook.add(tab2, text="Raw Binary")
+        newnotebook.add(tab3, text="Raw Hex")
         newnotebook.pack()
 
 
