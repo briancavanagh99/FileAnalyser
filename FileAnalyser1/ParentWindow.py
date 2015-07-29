@@ -36,16 +36,15 @@ class mainwindow(tkinter.Tk):
             newbinaryfile = open('binaryfiletext.txt', 'w+')              #create a new file to transfer the data to
             newhexfile = open('hexfiletext.txt', 'w+')
 
-            newbinaryfile.write(selectedfile)
-            newhexfile.write(selectedfile)
+            binaryconvert.bincontxt(newbinaryfile.write(selectedfile))    #transfer the data to the new files and then convert to binary
+            hexconvert.hexcontxt(newhexfile.write(selectedfile))           #transfer the data to the new files and then convert to hex
 
-            binconvertedfile = binaryconvert.bincon(newbinaryfile)
-            hexconvertedfile = hexconvert.hexcon(newhexfile)
-
+            printbinary = Toplevel(mainwindow)
 
 
         elif selectedfile.endswith('.bmp'):
-            newbinaryfile = open(binary)
+            newbinaryfile = open("binaryfilebmp.bmp", 'w+')
+            newhexfile = open("hexfilebmp.bmp", 'w+')
 
 
 
