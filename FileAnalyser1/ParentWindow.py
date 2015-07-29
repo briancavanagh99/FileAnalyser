@@ -29,7 +29,6 @@ class MainWindow(tkinter.Frame):
         tab6 = ttk.Frame(newnotebook)
         tab7 = ttk.Frame(newnotebook)
         tab8 = ttk.Frame(newnotebook)
-        tab9 = ttk.Frame(newnotebook)
 
         newnotebook.add(tab1, text="File Details")
         newnotebook.add(tab2, text="Raw Binary")
@@ -39,7 +38,6 @@ class MainWindow(tkinter.Frame):
         newnotebook.add(tab6, text="KWIC")
         newnotebook.add(tab7, text="Audio")
         newnotebook.add(tab8, text="Video")
-        newnotebook.add(tab9, text="Metadata")
 
         newnotebook.pack()
 
