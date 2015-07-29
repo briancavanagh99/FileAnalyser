@@ -24,10 +24,18 @@ class MainWindow(tkinter.Frame):
         tab1 = ttk.Frame(newnotebook)
         tab2 = ttk.Frame(newnotebook)
         tab3 = ttk.Frame(newnotebook)
+        tab4 = ttk.Frame(newnotebook)
+        tab5 = ttk.Frame(newnotebook)
+        tab6 = ttk.Frame(newnotebook)
+        tab7 = ttk.Frame(newnotebook)
 
         newnotebook.add(tab1, text="File Details")
         newnotebook.add(tab2, text="Raw Binary")
         newnotebook.add(tab3, text="Raw Hex")
+        newnotebook.add(tab4, text="URI's")
+        newnotebook.add(tab5, text="Images")
+        newnotebook.add(tab6, text="PLACE HOLDER 1")
+        newnotebook.add(tab7, text="PLACE HOLDER 2")
         newnotebook.pack()
 
 
