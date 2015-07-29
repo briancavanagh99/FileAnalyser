@@ -29,16 +29,32 @@ class mainwindow(tkinter.Tk):
 
     def getfile(self):   #this is the open file function linked back to the open file button
 
-#Need to create a binary and hex conversion module, this will be used to convert and save the data into the newly created files
-        binaryconvert.bincon()
-        hexconvert.hexcon()
-
-
-        newbinaryfile = open('binaryfile.txt', 'w+')              #create a new file to transfer the data to
-        newhexfile = open('hexfile.txt', 'w+')
         selectedfile = filedialog.askopenfilename(filetypes=[('All files', '*.*')])
+
+        if selectedfile.endswith('.txt'):
+
+            newbinaryfile = open('binaryfiletext.txt', 'w+')              #create a new file to transfer the data to
+            newhexfile = open('hexfiletext.txt', 'w+')
+
+            newbinaryfile.write(selectedfile)
+            newhexfile.write(selectedfile)
+
+            binconvertedfile = binaryconvert.bincon(newbinaryfile)
+            hexconvertedfile = hexconvert.hexcon(newhexfile)
+
+
+
+        elif selectedfile.endswith('.bmp'):
+            newbinaryfile = open(binary)
+
+
+
+
+
         #temp = tempfile.TemporaryFile(mode='w')
-        newfile.write(selectedfile)
+
+
+#Need to create a binary and hex conversion module, this will be used to convert and save the data into the newly created files
 
 
 
