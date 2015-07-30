@@ -19,16 +19,17 @@ def newtxtfiles(_selectedfile):
 def filedetailstxt(_selectedfile):       #preform file analysis on the original file
 
     #file name
-    filename =  os.path.splitext(_selectedfile)
-    print(filename, '\n')
+    filename = os.path.basename(_selectedfile)
+    print(filename)
+
 
     #file size
-    filesize = os.stat(_selectedfile)
-    print(filesize, '\n')
+    filesize = os.path.getsize(_selectedfile)
+    print(filesize, "bytes in size")
 
     #file extension
-    fileextension = os.path.splitext(_selectedfile)
-    print(fileextension)
+
+    print("This is a text file, find out more information about .txt files at", )
 
     #metadata
 

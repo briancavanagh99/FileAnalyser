@@ -6,6 +6,7 @@ import tkinter
 from tkinter import filedialog
 from FileAnalyser1 import filetype
 import tkinter.ttk as ttk
+from FileAnalyser1 import txtfiles
 
 
 
@@ -21,25 +22,6 @@ class MainWindow(tkinter.Frame):
         quitbutton = tkinter.Button(root, text="Quit", width=70, command=quit)
         quitbutton.pack()
 
-        tab1 = ttk.Frame(newnotebook)
-        tab2 = ttk.Frame(newnotebook)
-        tab3 = ttk.Frame(newnotebook)
-        tab4 = ttk.Frame(newnotebook)
-        tab5 = ttk.Frame(newnotebook)
-        tab6 = ttk.Frame(newnotebook)
-        tab7 = ttk.Frame(newnotebook)
-        tab8 = ttk.Frame(newnotebook)
-
-        newnotebook.add(tab1, text="File Details")
-        newnotebook.add(tab2, text="Raw Binary")
-        newnotebook.add(tab3, text="Raw Hex")
-        newnotebook.add(tab4, text="URI's")
-        newnotebook.add(tab5, text="Images")
-        newnotebook.add(tab6, text="KWIC")
-        newnotebook.add(tab7, text="Audio")
-        newnotebook.add(tab8, text="Video")
-
-        newnotebook.pack()
 
 
 
@@ -52,6 +34,31 @@ class MainWindow(tkinter.Frame):
         filetype.selectedfiletype(_selectedfile)          #execute the filetype function to confirm file type and start conversion
 
 
+
+        #Tabs placed here to popup after file selection
+        tab1 = ttk.Frame(newnotebook, width=900, height=500)
+
+
+
+
+        tab2 = ttk.Frame(newnotebook, width=900, height=500)
+        tab3 = ttk.Frame(newnotebook, width=900, height=500)
+        tab4 = ttk.Frame(newnotebook, width=900, height=500)
+        tab5 = ttk.Frame(newnotebook, width=900, height=500)
+        tab6 = ttk.Frame(newnotebook, width=900, height=500)
+        tab7 = ttk.Frame(newnotebook, width=900, height=500)
+        tab8 = ttk.Frame(newnotebook, width=900, height=500)
+
+        newnotebook.add(tab1, text="File Details")
+        newnotebook.add(tab2, text="Raw Binary")
+        newnotebook.add(tab3, text="Raw Hex")
+        newnotebook.add(tab4, text="URI's")
+        newnotebook.add(tab5, text="Images")
+        newnotebook.add(tab6, text="KWIC")
+        newnotebook.add(tab7, text="Audio")
+        newnotebook.add(tab8, text="Video")
+
+        newnotebook.pack()
 
 
 if __name__=='__main__':            #run the main instance to start the program
