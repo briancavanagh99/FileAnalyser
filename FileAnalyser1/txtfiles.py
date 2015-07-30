@@ -5,8 +5,11 @@ __author__ = 'cavanaghb'
 
 from FileAnalyser1 import filetype
 
-def filedetailstxt():
-    filetype.newhexfile =
+def filedetailstxt(selectedfile):
+
+    selectedfile                        #preform file analysis on the original file
+
+
     #file name
     #file size
     #file type
@@ -14,22 +17,24 @@ def filedetailstxt():
 
 
 def bincontxt():
-    filetype.newhexfile =
+    filetype.binhexfile =
 
 def hexcontxt():
     filetype.newhexfile =
 
 def uritxt():
+    filetype.binhexfile =
     filetype.newhexfile =
+
 
 def imagestxt():
-    filetype.newhexfile =
+
 
 def audiotxt():
-    filetype.newhexfile =
+
 
 def videotxt():
-    filetype.newhexfile =
+
 
 
 

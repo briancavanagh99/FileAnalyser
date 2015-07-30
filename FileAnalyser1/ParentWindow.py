@@ -52,10 +52,7 @@ class MainWindow(tkinter.Frame):
 
 
 
-
-
-
-if __name__=='__main__':
+if __name__=='__main__':            #run the main instance to start the program
     root = tkinter.Tk()
     newnotebook = ttk.Notebook(root)
     MainWindow(root).pack()

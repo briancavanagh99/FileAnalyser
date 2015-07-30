@@ -1,6 +1,6 @@
 __author__ = 'cavanaghb'
 
-
+from FileAnalyser1 import txtfiles
 
 def selectedfiletype(selectedfile):   #this is the open file function linked back to the open file button
 
@@ -10,8 +10,9 @@ def selectedfiletype(selectedfile):   #this is the open file function linked bac
         newhexfile = open('hexfiletext.txt', 'w+')
 
         newbinaryfile.write(selectedfile)
-        newhexfile.write(selectedfile)          #transfer the data to the new files and then convert to hex
+        newhexfile.write(selectedfile)          #transfer the data to the new files
 
+        txtfiles.filedetailstxt(selectedfile)           #get the file details
 
 
 
