@@ -9,7 +9,6 @@ import tkinter.ttk as ttk
 from FileAnalyser1 import txtfiles
 
 
-
 class MainWindow(tkinter.Frame):
 
     def __init__(self, root):             #first window dialog to open
@@ -37,8 +36,8 @@ class MainWindow(tkinter.Frame):
 
         #Tabs placed here to popup after file selection
         tab1 = ttk.Frame(newnotebook, width=900, height=500)
-
-
+        txtfiles.detailresulttxt = ttk.Label(tab1, text=)
+        txtfiles.detailresulttxt.pack()
 
 
         tab2 = ttk.Frame(newnotebook, width=900, height=500)

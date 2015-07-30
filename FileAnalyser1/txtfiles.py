@@ -20,18 +20,15 @@ def filedetailstxt(_selectedfile):       #preform file analysis on the original 
 
     #file name
     filename = os.path.basename(_selectedfile)
-    print(filename)
-
 
     #file size
     filesize = os.path.getsize(_selectedfile)
-    print(filesize, "bytes in size")
 
     #file extension
+    fileextension = ["This is a text file, find out more information about .txt files at", ]
 
-    print("This is a text file, find out more information about .txt files at", )
 
-    #metadata
+    global detailresulttxt = (filename + filesize + fileextension)
 
 '''
 def bincontxt():
