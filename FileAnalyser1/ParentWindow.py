@@ -36,8 +36,8 @@ class MainWindow(tkinter.Frame):
 
         #Tabs placed here to popup after file selection
         tab1 = ttk.Frame(newnotebook, width=900, height=500)
-        txtfiles.detailresulttxt = ttk.Label(tab1, text=)
-        txtfiles.detailresulttxt.pack()
+        results = ttk.Label(tab1, text=txtfiles.filedetailstxt.detailresulttxt)
+        results.pack()
 
 
         tab2 = ttk.Frame(newnotebook, width=900, height=500)
