@@ -47,7 +47,9 @@ class MainWindow(tkinter.Frame):
     def getfile(self):   #this is the open file function linked back to the open file button
 
         selectedfile = filedialog.askopenfilename(filetypes=[('All files', '*.*')])   #select and open a file
-        filetype.selectedfiletype(selectedfile)          #execute the filetype function to confirm file type and start conversion
+        global _selectedfile                    #make the arguement global for use outside the module
+        _selectedfile = selectedfile
+        filetype.selectedfiletype(_selectedfile)          #execute the filetype function to confirm file type and start conversion
 
 
 

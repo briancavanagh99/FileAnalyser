@@ -3,19 +3,36 @@ __author__ = 'cavanaghb'
 
 #conversion file to act as trigger for parent window file to binary
 
-from FileAnalyser1 import filetype
 
-def filedetailstxt(selectedfile):
+import os
 
-    selectedfile                        #preform file analysis on the original file
 
+def newtxtfiles(_selectedfile):
+
+    newbinaryfile = open('binaryfiletext.txt', 'w+')              #create a new file to transfer the data to
+    newhexfile = open('hexfiletext.txt', 'w+')
+
+    newbinaryfile.write(_selectedfile)
+    newhexfile.write(_selectedfile)          #transfer the data to the new files
+
+
+def filedetailstxt(_selectedfile):       #preform file analysis on the original file
 
     #file name
+    filename =  os.path.splitext(_selectedfile)
+    print(filename, '\n')
+
     #file size
-    #file type
+    filesize = os.stat(_selectedfile)
+    print(filesize, '\n')
+
+    #file extension
+    fileextension = os.path.splitext(_selectedfile)
+    print(fileextension)
+
     #metadata
 
-
+'''
 def bincontxt():
     filetype.binhexfile =
 
@@ -34,7 +51,7 @@ def audiotxt():
 
 
 def videotxt():
-
+'''
 
 
 
