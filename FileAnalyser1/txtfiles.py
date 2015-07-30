@@ -27,8 +27,8 @@ def filedetailstxt(_selectedfile):       #preform file analysis on the original 
     #file extension
     fileextension = ["This is a text file, find out more information about .txt files at", ]
 
-
-    global detailresulttxt = (filename + filesize + fileextension)
+    global detailresulttxt
+    detailresulttxt = filename + filesize + fileextension
 
 '''
 def bincontxt():
