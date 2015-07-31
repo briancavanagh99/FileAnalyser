@@ -10,7 +10,7 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
         txtfiles.newtxtfiles(_selectedfile)             #create copies of the files
         txtfiles.filedetailstxt(_selectedfile)           #get the file details
         txtfiles.bincontxt(_selectedfile)               #convert to binary
-
+        txtfiles.hexcontxt(_selectedfile)               #convert to hex
 
     elif _selectedfile.endswith('.bmp'):
         newbinaryfile = open("binaryfilebmp.bmp", 'w+')

@@ -41,13 +41,13 @@ class MainWindow(tkinter.Frame):
 
 
         tab2 = ttk.Frame(newnotebook, width=900, height=500)
-        #results2 = ttk.Label(tab2, text=txtfiles._binaryconvert)
-        #results2.pack()
+        results2 = ttk.Label(tab2, text=txtfiles._binaryconvert)
+        results2.pack()
 
         newscrollbar = tkinter.Scrollbar(tab2)
         newscrollbar.pack(side='right', fill='y')
 
-        results2 = txtfiles._binaryconvert(tab2, wrap='word')
+        results2 = tkinter.Text(tab2, wrap='word')
         results2.pack()
 
         results2.config(yscrollcommand=newscrollbar.set)
@@ -55,6 +55,19 @@ class MainWindow(tkinter.Frame):
 
 
         tab3 = ttk.Frame(newnotebook, width=900, height=500)
+        results3 = ttk.Label(tab3, text=txtfiles._hexconvert)
+        results3.pack()
+
+        newscrollbar = tkinter.Scrollbar(tab3)
+        newscrollbar.pack(side='right', fill='y')
+
+        results3 = tkinter.Text(tab3, wrap='word')
+        results3.pack()
+
+        results3.config(yscrollcommand=newscrollbar.set)
+        newscrollbar.config(command=results2.yview)
+
+
         tab4 = ttk.Frame(newnotebook, width=900, height=500)
         tab5 = ttk.Frame(newnotebook, width=900, height=500)
         tab6 = ttk.Frame(newnotebook, width=900, height=500)

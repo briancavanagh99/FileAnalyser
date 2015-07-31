@@ -35,10 +35,14 @@ def bincontxt(_selectedfile):
     _binaryconvert = binaryconvert
 
 
-'''
-def hexcontxt():
-    filetype.newhexfile =
 
+def hexcontxt(_selectedfile):
+    hexconvert = " ".join(hex(ord(n)) for n in _selectedfile)
+    global _hexconvert
+    _hexconvert = hexconvert
+
+
+'''
 def uritxt():
     filetype.binhexfile =
     filetype.newhexfile =
