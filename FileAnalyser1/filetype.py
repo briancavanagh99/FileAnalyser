@@ -7,9 +7,9 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
 
     if _selectedfile.endswith('.txt'):
 
-        txtfiles.newtxtfiles(_selectedfile)
+        txtfiles.newtxtfiles(_selectedfile)             #create copies of the files
         txtfiles.filedetailstxt(_selectedfile)           #get the file details
-
+        txtfiles.bincontxt(_selectedfile)               #convert to binary
 
 
     elif _selectedfile.endswith('.bmp'):

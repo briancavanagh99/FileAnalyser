@@ -7,6 +7,7 @@ from tkinter import filedialog
 from FileAnalyser1 import filetype
 import tkinter.ttk as ttk
 from FileAnalyser1 import txtfiles
+import tkinter.scrolledtext
 
 
 class MainWindow(tkinter.Frame):
@@ -23,8 +24,6 @@ class MainWindow(tkinter.Frame):
 
 
 
-
-
     def getfile(self):   #this is the open file function linked back to the open file button
 
         selectedfile = filedialog.askopenfilename(filetypes=[('All files', '*.*')])   #select and open a file
@@ -37,11 +36,24 @@ class MainWindow(tkinter.Frame):
         #Tabs placed here to popup after file selection
 
         tab1 = ttk.Frame(newnotebook, width=900, height=500)
-        results = ttk.Label(tab1, text=txtfiles._detailresulttxt)
-        results.pack()
+        results1 = ttk.Label(tab1, text=txtfiles._filedetailresult)
+        results1.pack()
 
 
         tab2 = ttk.Frame(newnotebook, width=900, height=500)
+        #results2 = ttk.Label(tab2, text=txtfiles._binaryconvert)
+        #results2.pack()
+
+        newscrollbar = tkinter.Scrollbar(tab2)
+        newscrollbar.pack(side='right', fill='y')
+
+        results2 = txtfiles._binaryconvert(tab2, wrap='word')
+        results2.pack()
+
+        results2.config(yscrollcommand=newscrollbar.set)
+        newscrollbar.config(command=results2.yview)
+
+
         tab3 = ttk.Frame(newnotebook, width=900, height=500)
         tab4 = ttk.Frame(newnotebook, width=900, height=500)
         tab5 = ttk.Frame(newnotebook, width=900, height=500)

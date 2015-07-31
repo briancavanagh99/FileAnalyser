@@ -5,10 +5,9 @@ __author__ = 'cavanaghb'
 
 
 import os
-
+import binascii
 
 def newtxtfiles(_selectedfile):
-
     newbinaryfile = open('binaryfiletext.txt', 'w+')              #create a new file to transfer the data to
     newhexfile = open('hexfiletext.txt', 'w+')
 
@@ -18,26 +17,25 @@ def newtxtfiles(_selectedfile):
 
 def filedetailstxt(_selectedfile):       #preform file analysis on the original file
 
-    #file name
-    filename = os.path.basename(_selectedfile)
+    filename = os.path.basename(_selectedfile)          #file name
+    filesize = os.path.getsize(_selectedfile)               #file size
+    fileextension = ["This is a text file, find out more information about '*.txt' files at", ]         #file extension
 
-    #file size
-    filesize = os.path.getsize(_selectedfile)
-
-    #file extension
-    fileextension = ["This is a text file, find out more information about '*.txt' files at", ]
+    filedetailresult = str(filename) + str(filesize) + str(fileextension)        #create a string out of each piece of data and return to the main window
+    global _filedetailresult
+    _filedetailresult = filedetailresult
 
 
-    detailresulttxt = str(filename) + str(filesize) + str(fileextension)
-    global _detailresulttxt
-    _detailresulttxt = detailresulttxt
 
+
+def bincontxt(_selectedfile):
+
+    binaryconvert = ' '.join(format(ord(x), 'b') for x in _selectedfile)   #NEED TO CONFIRM THE FULL WORKING OF THIS!!!
+    global _binaryconvert
+    _binaryconvert = binaryconvert
 
 
 '''
-def bincontxt():
-    filetype.binhexfile =
-
 def hexcontxt():
     filetype.newhexfile =
 
