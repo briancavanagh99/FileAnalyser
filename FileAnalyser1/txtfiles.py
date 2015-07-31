@@ -42,12 +42,15 @@ def hexcontxt(_selectedfile):
     _hexconvert = hexconvert
 
 
+
+def uritxt(_selectedfile):
+
+    with open('_selectedfile', 'r') as inF:
+    for line in inF:
+        if 'myString' in line:
+            # do_something
+
 '''
-def uritxt():
-    filetype.binhexfile =
-    filetype.newhexfile =
-
-
 def imagestxt():
 
 
