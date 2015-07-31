@@ -25,10 +25,14 @@ def filedetailstxt(_selectedfile):       #preform file analysis on the original 
     filesize = os.path.getsize(_selectedfile)
 
     #file extension
-    fileextension = ["This is a text file, find out more information about .txt files at", ]
+    fileextension = ["This is a text file, find out more information about '*.txt' files at", ]
 
-    global detailresulttxt
-    detailresulttxt = filename + filesize + fileextension
+
+    detailresulttxt = str(filename) + str(filesize) + str(fileextension)
+    global _detailresulttxt
+    _detailresulttxt = detailresulttxt
+
+
 
 '''
 def bincontxt():
