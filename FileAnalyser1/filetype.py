@@ -12,6 +12,8 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
         txtfiles.bincontxt(_selectedfile)               #convert to binary
         txtfiles.hexcontxt(_selectedfile)               #convert to hex
 
+        txtfiles.imagestxt(_selectedfile)
+
     elif _selectedfile.endswith('.bmp'):
         newbinaryfile = open("binaryfilebmp.bmp", 'w+')
         newhexfile = open("hexfilebmp.bmp", 'w+')

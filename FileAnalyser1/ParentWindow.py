@@ -69,10 +69,21 @@ class MainWindow(tkinter.Frame):
 
 
         tab4 = ttk.Frame(newnotebook, width=900, height=500)
+
+
         tab5 = ttk.Frame(newnotebook, width=900, height=500)
+        results5 = ttk.Label(tab5, text=txtfiles.imagestxt())
+        results5.pack()
+
         tab6 = ttk.Frame(newnotebook, width=900, height=500)
+
+
         tab7 = ttk.Frame(newnotebook, width=900, height=500)
+
+
         tab8 = ttk.Frame(newnotebook, width=900, height=500)
+
+
 
         newnotebook.add(tab1, text="File Details")
         newnotebook.add(tab2, text="Raw Binary")

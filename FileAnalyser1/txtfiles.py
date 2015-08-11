@@ -37,23 +37,31 @@ def bincontxt(_selectedfile):
 
 
 def hexcontxt(_selectedfile):
-    hexconvert = " ".join(hex(ord(n)) for n in _selectedfile)
+    hexconvert = " ".join(hex(ord(n)) for n in _selectedfile)               #FIGURE OUT THIS LINE FULLY!!!
     global _hexconvert
     _hexconvert = hexconvert
 
 
 
 def uritxt(_selectedfile):
+    startresult = _selectedfile.startswith("www")
+    _selectedfile.find()
 
 
 
-    '''
-    #def imagestxt():
+def imagestxt(_selectedfile):
+    noimagestxt = ["There are no images in a text file"]
+    global _noimagestxt
+    _noimagestxt = noimagestxt
+
+
+    #def kwic():
+
 
     #def audiotxt():
 
     #def videotxt():
-    '''
+
 
 
 
