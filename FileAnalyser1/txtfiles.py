@@ -5,7 +5,7 @@ __author__ = 'cavanaghb'
 
 
 import os
-import binascii
+#import binascii
 
 def newtxtfiles(_selectedfile):
     newbinaryfile = open('binaryfiletext.txt', 'w+')              #create a new file to transfer the data to
@@ -47,15 +47,13 @@ def uritxt(_selectedfile):
 
 
 
-'''
-def imagestxt():
+    '''
+    #def imagestxt():
 
+    #def audiotxt():
 
-def audiotxt():
-
-
-def videotxt():
-'''
+    #def videotxt():
+    '''
 
 
 
