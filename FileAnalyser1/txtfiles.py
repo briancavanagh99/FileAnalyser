@@ -27,13 +27,11 @@ def filedetailstxt(_selectedfile):       #preform file analysis on the original 
 
 
 
-
 def bincontxt(_selectedfile):
 
     binaryconvert = ' '.join(format(ord(x), 'b') for x in _selectedfile)   #NEED TO CONFIRM THE FULL WORKING OF THIS!!!
     global _binaryconvert
     _binaryconvert = binaryconvert
-
 
 
 def hexcontxt(_selectedfile):
@@ -42,10 +40,9 @@ def hexcontxt(_selectedfile):
     _hexconvert = hexconvert
 
 
-
-def uritxt(_selectedfile):
-    startresult = _selectedfile.startswith("www")
-    _selectedfile.find()
+#def uritxt(_selectedfile):
+ #   startresult = _selectedfile.startswith("www")
+  #  _selectedfile.find()
 
 
 
@@ -55,7 +52,7 @@ def imagestxt(_selectedfile):
     _noimagestxt = noimagestxt
 
 
-    #def kwic():
+def kwic():
 
 
     #def audiotxt():

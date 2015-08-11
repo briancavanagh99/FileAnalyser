@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a3b2494-c8d3-4f90-b902-87032989fed4" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\brian_000\PycharmProjects\FileAnalyser\FileAnalyser1\hexfiles.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileAnalyser1/ParentWindow.py" afterPath="$PROJECT_DIR$/FileAnalyser1/ParentWindow.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileAnalyser1/filetype.py" afterPath="$PROJECT_DIR$/FileAnalyser1/filetype.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FileAnalyser1/txtfiles.py" afterPath="$PROJECT_DIR$/FileAnalyser1/txtfiles.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,34 +25,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ParentWindow.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FileAnalyser1/ParentWindow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding>
-                <element signature="e#97#111#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filetype.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="filetype.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FileAnalyser1/filetype.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39144737">
+            <state vertical-scroll-proportion="0.0">
               <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="txtfiles.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="txtfiles.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FileAnalyser1/txtfiles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="27" />
-              <folding />
+            <state vertical-scroll-proportion="0.9440789">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding>
+                <element signature="e#1043#1219#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,6 +53,18 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="11" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParentWindow.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FileAnalyser1/ParentWindow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding>
+                <element signature="e#97#111#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -316,7 +316,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439313736776</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v.6.1">
+      <created>1439317413484</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1439317413484</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -357,7 +363,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v.6.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.6.0" />
+    <MESSAGE value="v.6.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.6.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -388,7 +395,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1043#1219#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FileAnalyser1/filetype.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FileAnalyser1/ParentWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#97#111#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -402,27 +429,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FileAnalyser1/txtfiles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FileAnalyser1/ParentWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.9440789">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
-            <element signature="e#97#111#0" expanded="true" />
+            <element signature="e#1043#1219#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FileAnalyser1/filetype.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39144737">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
