@@ -77,12 +77,13 @@ class MainWindow(tkinter.Frame):
 
 
         tab6 = ttk.Frame(newnotebook, width=900, height=500)
-
+        results6 = ttk.Label(tab6, text=txtfiles._noaudiotxt)
+        results6.pack()
 
         tab7 = ttk.Frame(newnotebook, width=900, height=500)
+        results7 = ttk.Label(tab7, text=txtfiles._novideotxt)
+        results7.pack()
 
-
-        tab8 = ttk.Frame(newnotebook, width=900, height=500)
 
 
 
@@ -91,9 +92,8 @@ class MainWindow(tkinter.Frame):
         newnotebook.add(tab3, text="Raw Hex")
         newnotebook.add(tab4, text="URI's")
         newnotebook.add(tab5, text="Images")
-        newnotebook.add(tab6, text="KWIC")
-        newnotebook.add(tab7, text="Audio")
-        newnotebook.add(tab8, text="Video")
+        newnotebook.add(tab6, text="Audio")
+        newnotebook.add(tab7, text="Video")
 
         newnotebook.pack()
 

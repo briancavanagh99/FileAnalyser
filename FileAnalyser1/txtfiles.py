@@ -52,13 +52,19 @@ def imagestxt(_selectedfile):
     _noimagestxt = noimagestxt
 
 
-def kwic():
+    #def kwictxt(_selectedfile):            #CAN@T FIND LIBRARY FOR THIS
 
 
-    #def audiotxt():
+def audiotxt():
+    noaudiotxt = ["There is audio in a text file"]
+    global _noaudiotxt
+    _noaudiotxt = noaudiotxt
 
-    #def videotxt():
 
+def videotxt():
+    novideotxt = ["There is no video in a text file"]
+    global _novideotxt
+    _novideotxt = novideotxt
 
 
 

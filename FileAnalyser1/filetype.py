@@ -13,6 +13,9 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
         txtfiles.hexcontxt(_selectedfile)               #convert to hex
 
         txtfiles.imagestxt(_selectedfile)
+        txtfiles.audiotxt(_selectedfile)
+        txtfiles.videotxt(_selectedfile)
+
 
     elif _selectedfile.endswith('.bmp'):
         newbinaryfile = open("binaryfilebmp.bmp", 'w+')
