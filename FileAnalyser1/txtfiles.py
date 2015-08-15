@@ -7,12 +7,12 @@ __author__ = 'cavanaghb'
 import os
 #import binascii
 
-def newtxtfiles(_selectedfile):
-    newbinaryfile = open('binaryfiletext.txt', 'w+')              #create a new file to transfer the data to
-    newhexfile = open('hexfiletext.txt', 'w+')
+#def newtxtfiles(_selectedfile):
+    #newbinaryfile = open('binaryfiletext.txt', 'w+')              #create a new file to transfer the data to
+    #newhexfile = open('hexfiletext.txt', 'w+')
 
-    newbinaryfile.write(_selectedfile)
-    newhexfile.write(_selectedfile)          #transfer the data to the new files
+    #newbinaryfile.write(_selectedfile)
+    #newhexfile.write(_selectedfile)          #transfer the data to the new files
 
 
 def filedetailstxt(_selectedfile):       #preform file analysis on the original file
@@ -55,13 +55,13 @@ def imagestxt(_selectedfile):
     #def kwictxt(_selectedfile):            #CAN@T FIND LIBRARY FOR THIS
 
 
-def audiotxt():
+def audiotxt(_selectedfile):
     noaudiotxt = ["There is audio in a text file"]
     global _noaudiotxt
     _noaudiotxt = noaudiotxt
 
 
-def videotxt():
+def videotxt(_selectedfile):
     novideotxt = ["There is no video in a text file"]
     global _novideotxt
     _novideotxt = novideotxt

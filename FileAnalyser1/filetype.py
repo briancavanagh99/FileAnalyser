@@ -1,13 +1,14 @@
 __author__ = 'cavanaghb'
 
 from FileAnalyser1 import txtfiles
+from FileAnalyser1 import jpegfiles
 
 
 def selectedfiletype(_selectedfile):   #this is the open file function linked back to the open file button
 
     if _selectedfile.endswith('.txt'):
 
-        txtfiles.newtxtfiles(_selectedfile)             #create copies of the files
+        #txtfiles.newtxtfiles(_selectedfile)             #create copies of the files
         txtfiles.filedetailstxt(_selectedfile)           #get the file details
         txtfiles.bincontxt(_selectedfile)               #convert to binary
         txtfiles.hexcontxt(_selectedfile)               #convert to hex
@@ -17,6 +18,11 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
         txtfiles.videotxt(_selectedfile)
 
 
-    elif _selectedfile.endswith('.bmp'):
-        newbinaryfile = open("binaryfilebmp.bmp", 'w+')
-        newhexfile = open("hexfilebmp.bmp", 'w+')
+    elif _selectedfile.endswith('.jpeg'):
+        something
+
+    elif _selectedfile.endswith('.csv'):
+        something
+
+    else _selectedfile.endswith('.avi'):
+        something
