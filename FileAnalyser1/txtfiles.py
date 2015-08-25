@@ -5,6 +5,7 @@ __author__ = 'cavanaghb'
 
 
 import os
+import re
 #import binascii
 
 #def newtxtfiles(_selectedfile):
@@ -40,10 +41,10 @@ def hexcontxt(_selectedfile):
     _hexconvert = hexconvert
 
 
-#def uritxt(_selectedfile):
- #   startresult = _selectedfile.startswith("www")
-  #  _selectedfile.find()
-
+def uritxt(_selectedfile):                                      #THIS ISNT WORKING NEED TO CONFIRM REGEX SEARCH
+    uriresult = re.findall(r'(www?://\S+)', _selectedfile)
+    global _uriresult
+    _uriresult = uriresult
 
 
 def imagestxt(_selectedfile):

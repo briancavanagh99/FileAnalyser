@@ -12,12 +12,12 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
         txtfiles.filedetailstxt(_selectedfile)           #get the file details
         txtfiles.bincontxt(_selectedfile)               #convert to binary
         txtfiles.hexcontxt(_selectedfile)               #convert to hex
-
+        txtfiles.uritxt(_selectedfile)
         txtfiles.imagestxt(_selectedfile)
         txtfiles.audiotxt(_selectedfile)
         txtfiles.videotxt(_selectedfile)
 
-
+'''
     elif _selectedfile.endswith('.jpeg'):
         something
 
@@ -26,3 +26,4 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
 
     else _selectedfile.endswith('.avi'):
         something
+'''

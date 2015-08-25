@@ -69,7 +69,8 @@ class MainWindow(tkinter.Frame):
 
 
         tab4 = ttk.Frame(newnotebook, width=900, height=500)
-
+        results4 = ttk.Label(tab4, text=txtfiles._uriresult)
+        results4.pack()
 
         tab5 = ttk.Frame(newnotebook, width=900, height=500)
         results5 = ttk.Label(tab5, text=txtfiles._noimagestxt)
