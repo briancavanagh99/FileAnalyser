@@ -41,8 +41,7 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
 
 
 
-    elif _selectedfile.endswith('.doc'):
-
+    elif _selectedfile.endswith('.odt'):
         #docfiles.newdocfiles(_selectedfile)             #create copies of the files
         docfiles.filedetailsdoc(_selectedfile)           #get the file details
         _returnfileresult = docfiles._filedetailresult
