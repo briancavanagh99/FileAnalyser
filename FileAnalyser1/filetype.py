@@ -1,7 +1,7 @@
 __author__ = 'cavanaghb'
 
 from FileAnalyser1 import txtfiles
-from FileAnalyser1 import docfiles
+from FileAnalyser1 import odtfiles
 from FileAnalyser1 import jpegfiles
 
 
@@ -43,26 +43,26 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
 
     elif _selectedfile.endswith('.odt'):
         #docfiles.newdocfiles(_selectedfile)             #create copies of the files
-        docfiles.filedetailsdoc(_selectedfile)           #get the file details
-        _returnfileresult = docfiles._filedetailresult
+        odtfiles.filedetailsdoc(_selectedfile)           #get the file details
+        _returnfileresult = odtfiles._filedetailresult
 
-        docfiles.bincondoc(_selectedfile)               #convert to binary
-        _returnbinresult = docfiles._binaryresult
+        odtfiles.bincondoc(_selectedfile)               #convert to binary
+        _returnbinresult = odtfiles._binaryresult
 
-        docfiles.hexcondoc(_selectedfile)               #convert to hex
-        _returnhexresult = docfiles._hexresult
+        odtfiles.hexcondoc(_selectedfile)               #convert to hex
+        _returnhexresult = odtfiles._hexresult
 
-        docfiles.uridoc(_selectedfile)
-        _returnuriresult = docfiles._uriresult
+        odtfiles.uridoc(_selectedfile)
+        _returnuriresult = odtfiles._uriresult
 
-        docfiles.imagesdoc(_selectedfile)
-        _returnimageresult = docfiles._imageresult
+        odtfiles.imagesdoc(_selectedfile)
+        _returnimageresult = odtfiles._imageresult
 
-        docfiles.audiodoc(_selectedfile)
-        _returnaudioresult = docfiles._audioresult
+        odtfiles.audiodoc(_selectedfile)
+        _returnaudioresult = odtfiles._audioresult
 
-        docfiles.videodoc(_selectedfile)
-        _returnvideoresult = docfiles._videoresult
+        odtfiles.videodoc(_selectedfile)
+        _returnvideoresult = odtfiles._videoresult
 
 '''
     elif _selectedfile.endswith('.csv'):
