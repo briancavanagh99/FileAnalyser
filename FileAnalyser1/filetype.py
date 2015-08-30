@@ -1,41 +1,69 @@
 __author__ = 'cavanaghb'
 
 from FileAnalyser1 import txtfiles
+from FileAnalyser1 import docfiles
 from FileAnalyser1 import jpegfiles
 
 
 def selectedfiletype(_selectedfile):   #this is the open file function linked back to the open file button
 
+    global _returnfileresult
+    global _returnbinresult
+    global _returnhexresult
+    global _returnuriresult
+    global _returnimageresult
+    global _returnaudioresult
+    global _returnvideoresult
+
     if _selectedfile.endswith('.txt'):
 
         #txtfiles.newtxtfiles(_selectedfile)             #create copies of the files
         txtfiles.filedetailstxt(_selectedfile)           #get the file details
-        global _returnfileresult
         _returnfileresult = txtfiles._filedetailresult
 
         txtfiles.bincontxt(_selectedfile)               #convert to binary
-        global _returnbinresult
         _returnbinresult = txtfiles._binaryresult
 
         txtfiles.hexcontxt(_selectedfile)               #convert to hex
-        global _returnhexresult
         _returnhexresult = txtfiles._hexresult
 
         txtfiles.uritxt(_selectedfile)
-        global _returnuriresult
         _returnuriresult = txtfiles._uriresult
 
         txtfiles.imagestxt(_selectedfile)
-        global _returnimageresult
-        _returnimageresult = txtfiles._noimagetxt
+        _returnimageresult = txtfiles._imageresult
 
         txtfiles.audiotxt(_selectedfile)
-        global _returnaudioresult
-        _returnaudioresult = txtfiles._noaudiotxt
+        _returnaudioresult = txtfiles._audioresult
 
         txtfiles.videotxt(_selectedfile)
-        global _returnvideoresult
-        _returnvideoresult = txtfiles._novideotxt
+        _returnvideoresult = txtfiles._videoresult
+
+
+
+    elif _selectedfile.endswith('.doc'):
+
+        #docfiles.newdocfiles(_selectedfile)             #create copies of the files
+        docfiles.filedetailsdoc(_selectedfile)           #get the file details
+        _returnfileresult = docfiles._filedetailresult
+
+        docfiles.bincondoc(_selectedfile)               #convert to binary
+        _returnbinresult = docfiles._binaryresult
+
+        docfiles.hexcondoc(_selectedfile)               #convert to hex
+        _returnhexresult = docfiles._hexresult
+
+        docfiles.uridoc(_selectedfile)
+        _returnuriresult = docfiles._uriresult
+
+        docfiles.imagesdoc(_selectedfile)
+        _returnimageresult = docfiles._imageresult
+
+        docfiles.audiodoc(_selectedfile)
+        _returnaudioresult = docfiles._audioresult
+
+        docfiles.videodoc(_selectedfile)
+        _returnvideoresult = docfiles._videoresult
 
 '''
     elif _selectedfile.endswith('.csv'):
