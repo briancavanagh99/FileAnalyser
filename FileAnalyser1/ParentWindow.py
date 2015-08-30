@@ -36,12 +36,12 @@ class MainWindow(tkinter.Frame):
         #Tabs placed here to popup after file selection
 
         tab1 = ttk.Frame(newnotebook, width=900, height=500)
-        results1 = ttk.Label(tab1, text=txtfiles._filedetailresult)
+        results1 = ttk.Label(tab1, text=filetype._returnfileresult)
         results1.pack()
 
 
         tab2 = ttk.Frame(newnotebook, width=900, height=500)
-        results2 = ttk.Label(tab2, text=txtfiles._binaryconvert)
+        results2 = ttk.Label(tab2, text=filetype._returnbinresult)
         results2.pack()
 
         newscrollbar = tkinter.Scrollbar(tab2)
@@ -55,7 +55,7 @@ class MainWindow(tkinter.Frame):
 
 
         tab3 = ttk.Frame(newnotebook, width=900, height=500)
-        results3 = ttk.Label(tab3, text=txtfiles._hexconvert)
+        results3 = ttk.Label(tab3, text=filetype._returnhexresult)
         results3.pack()
 
         newscrollbar = tkinter.Scrollbar(tab3)
@@ -69,21 +69,20 @@ class MainWindow(tkinter.Frame):
 
 
         tab4 = ttk.Frame(newnotebook, width=900, height=500)
-        results4 = ttk.Label(tab4, text=txtfiles._uriresult)
+        results4 = ttk.Label(tab4, text=filetype._returnuriresult)
         results4.pack()
 
         tab5 = ttk.Frame(newnotebook, width=900, height=500)
-        results5 = ttk.Label(tab5, text=txtfiles._no
-        imagestxt)
+        results5 = ttk.Label(tab5, text=filetype._returnimageresult)
         results5.pack()
 
 
         tab6 = ttk.Frame(newnotebook, width=900, height=500)
-        results6 = ttk.Label(tab6, text=txtfiles._noaudiotxt)
+        results6 = ttk.Label(tab6, text=filetype._returnaudioresult)
         results6.pack()
 
         tab7 = ttk.Frame(newnotebook, width=900, height=500)
-        results7 = ttk.Label(tab7, text=txtfiles._novideotxt)
+        results7 = ttk.Label(tab7, text=filetype._returnvideoresult)
         results7.pack()
 
 

@@ -22,23 +22,22 @@ def filedetailstxt(_selectedfile):       #preform file analysis on the original 
     filesize = os.path.getsize(_selectedfile)               #file size
     fileextension = ["This is a text file, find out more information about '*.txt' files at", ]         #file extension
 
-    filedetailresult = str(filename) + str(filesize) + str(fileextension)        #create a string out of each piece of data and return to the main window
+    txtdetailresult = str(filename) + str(filesize) + str(fileextension)        #create a string out of each piece of data and return to the main window
     global _filedetailresult
-    _filedetailresult = filedetailresult
-
+    _filedetailresult = txtdetailresult
 
 
 def bincontxt(_selectedfile):
 
     binaryconvert = ' '.join(format(ord(x), 'b') for x in _selectedfile)   #NEED TO CONFIRM THE FULL WORKING OF THIS!!!
-    global _binaryconvert
-    _binaryconvert = binaryconvert
+    global _binaryresult
+    _binaryresult = binaryconvert
 
 
 def hexcontxt(_selectedfile):
     hexconvert = " ".join(hex(ord(n)) for n in _selectedfile)               #FIGURE OUT THIS LINE FULLY!!!
-    global _hexconvert
-    _hexconvert = hexconvert
+    global _hexresult
+    _hexresult = hexconvert
 
 
 def uritxt(_selectedfile):                                      #THIS ISNT WORKING NEED TO CONFIRM REGEX SEARCH
@@ -49,23 +48,23 @@ def uritxt(_selectedfile):                                      #THIS ISNT WORKI
 
 def imagestxt(_selectedfile):
     noimagestxt = ["There are no images in a text file"]
-    global _noimagestxt
-    _noimagestxt = noimagestxt
+    global _imageresult
+    _imageresult = noimagestxt
 
 
-    #def kwictxt(_selectedfile):            #CAN@T FIND LIBRARY FOR THIS
+    #def kwictxt(_selectedfile):            #CAN'T FIND LIBRARY FOR THIS
 
 
 def audiotxt(_selectedfile):
     noaudiotxt = ["There is audio in a text file"]
-    global _noaudiotxt
-    _noaudiotxt = noaudiotxt
+    global _audioresult
+    _audioresult = noaudiotxt
 
 
 def videotxt(_selectedfile):
     novideotxt = ["There is no video in a text file"]
-    global _novideotxt
-    _novideotxt = novideotxt
+    global _videoresult
+    _videoresult = novideotxt
 
 
 
