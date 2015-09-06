@@ -65,28 +65,72 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
         _returnvideoresult = odtfiles._videoresult
 
 
-    else _selectedfile.endswith('.avi'):
-        avifiles.filedetailstxt(_selectedfile)           #get the file details
-        avifiles.bincontxt(_selectedfile)               #convert to binary
-        avifiles.hexcontxt(_selectedfile)               #convert to hex
-        avifiles.uritxt(_selectedfile)
-        avifiles.imagestxt(_selectedfile)
-        avifiles.audiotxt(_selectedfile)
-        avifiles.videotxt(_selectedfile)
+    elif _selectedfile.endswith('.avi'):
+        #docfiles.newdocfiles(_selectedfile)             #create copies of the files
+        avifiles.filedetailsdoc(_selectedfile)           #get the file details
+        _returnfileresult = avifiles._filedetailresult
+
+        avifiles.bincondoc(_selectedfile)               #convert to binary
+        _returnbinresult = avifiles._binaryresult
+
+        avifiles.hexcondoc(_selectedfile)               #convert to hex
+        _returnhexresult = avifiles._hexresult
+
+        avifiles.uridoc(_selectedfile)
+        _returnuriresult = avifiles._uriresult
+
+        avifiles.imagesdoc(_selectedfile)
+        _returnimageresult = avifiles._imageresult
+
+        avifiles.audiodoc(_selectedfile)
+        _returnaudioresult = avifiles._audioresult
+
+        avifiles.videodoc(_selectedfile)
+        _returnvideoresult = avifiles._videoresult
 
     elif _selectedfile.endswith('.csv'):
-        csvfiles.bincontxt(_selectedfile)               #convert to binary
-        csvfiles.hexcontxt(_selectedfile)               #convert to hex
-        csvfiles.uritxt(_selectedfile)
-        csvfiles.imagestxt(_selectedfile)
-        csvfiles.audiotxt(_selectedfile)
-        csvfiles.videotxt(_selectedfile)
+        #docfiles.newdocfiles(_selectedfile)             #create copies of the files
+        csvfiles.filedetailsdoc(_selectedfile)           #get the file details
+        _returnfileresult = csvfiles._filedetailresult
 
-    else _selectedfile.endswith('.jpeg'):
-        jpegfiles.bincontxt(_selectedfile)               #convert to binary
-        jpegfiles.hexcontxt(_selectedfile)               #convert to hex
-        jpegfiles.uritxt(_selectedfile)
-        jpegfiles.imagestxt(_selectedfile)
-        jpegfiles.audiotxt(_selectedfile)
-        jpegfiles.videotxt(_selectedfile)
+        csvfiles.bincondoc(_selectedfile)               #convert to binary
+        _returnbinresult = csvfiles._binaryresult
+
+        csvfiles.hexcondoc(_selectedfile)               #convert to hex
+        _returnhexresult = csvfiles._hexresult
+
+        csvfiles.uridoc(_selectedfile)
+        _returnuriresult = csvfiles._uriresult
+
+        csvfiles.imagesdoc(_selectedfile)
+        _returnimageresult = csvfiles._imageresult
+
+        csvfiles.audiodoc(_selectedfile)
+        _returnaudioresult = csvfiles._audioresult
+
+        csvfiles.videodoc(_selectedfile)
+        _returnvideoresult = csvfiles._videoresult
+
+    elif _selectedfile.endswith('.jpeg'):
+        #docfiles.newdocfiles(_selectedfile)             #create copies of the files
+        jpegfiles.filedetailsdoc(_selectedfile)           #get the file details
+        _returnfileresult = jpegfiles._filedetailresult
+
+        jpegfiles.bincondoc(_selectedfile)               #convert to binary
+        _returnbinresult = jpegfiles._binaryresult
+
+        jpegfiles.hexcondoc(_selectedfile)               #convert to hex
+        _returnhexresult = jpegfiles._hexresult
+
+        jpegfiles.uridoc(_selectedfile)
+        _returnuriresult = jpegfiles._uriresult
+
+        jpegfiles.imagesdoc(_selectedfile)
+        _returnimageresult = jpegfiles._imageresult
+
+        jpegfiles.audiodoc(_selectedfile)
+        _returnaudioresult = jpegfiles._audioresult
+
+        jpegfiles.videodoc(_selectedfile)
+        _returnvideoresult = jpegfiles._videoresult
 
