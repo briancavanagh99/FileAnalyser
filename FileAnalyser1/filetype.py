@@ -41,7 +41,7 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
 
 
 
-    elif _selectedfile.endswith('.odt'):
+    elif _selectedfile.endswith('.odt') or _selectedfile.endswith('.doc'):
         #docfiles.newdocfiles(_selectedfile)             #create copies of the files
         odtfiles.filedetailsdoc(_selectedfile)           #get the file details
         _returnfileresult = odtfiles._filedetailresult
@@ -64,9 +64,17 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
         odtfiles.videodoc(_selectedfile)
         _returnvideoresult = odtfiles._videoresult
 
-'''
+
+    else _selectedfile.endswith('.avi'):
+        avifiles.filedetailstxt(_selectedfile)           #get the file details
+        avifiles.bincontxt(_selectedfile)               #convert to binary
+        avifiles.hexcontxt(_selectedfile)               #convert to hex
+        avifiles.uritxt(_selectedfile)
+        avifiles.imagestxt(_selectedfile)
+        avifiles.audiotxt(_selectedfile)
+        avifiles.videotxt(_selectedfile)
+
     elif _selectedfile.endswith('.csv'):
-        csvfiles.filedetailstxt(_selectedfile)           #get the file details
         csvfiles.bincontxt(_selectedfile)               #convert to binary
         csvfiles.hexcontxt(_selectedfile)               #convert to hex
         csvfiles.uritxt(_selectedfile)
@@ -74,11 +82,11 @@ def selectedfiletype(_selectedfile):   #this is the open file function linked ba
         csvfiles.audiotxt(_selectedfile)
         csvfiles.videotxt(_selectedfile)
 
+    else _selectedfile.endswith('.jpeg'):
+        jpegfiles.bincontxt(_selectedfile)               #convert to binary
+        jpegfiles.hexcontxt(_selectedfile)               #convert to hex
+        jpegfiles.uritxt(_selectedfile)
+        jpegfiles.imagestxt(_selectedfile)
+        jpegfiles.audiotxt(_selectedfile)
+        jpegfiles.videotxt(_selectedfile)
 
-
-    elif _selectedfile.endswith('.jpeg'):
-        something
-
-    else _selectedfile.endswith('.avi'):
-        something
-'''

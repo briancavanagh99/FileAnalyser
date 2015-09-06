@@ -40,7 +40,7 @@ def uridoc(_selectedfile):                                      #THIS ISNT WORKI
 
 
 def imagesdoc(_selectedfile):
-    noimagesdoc = ["There are no images in a doc file"]
+    noimagesdoc = ["There are no images in a odt or doc file"]
     global _imageresult
     _imageresult = noimagesdoc
 
