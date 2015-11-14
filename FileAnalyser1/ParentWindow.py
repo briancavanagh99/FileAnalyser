@@ -8,7 +8,7 @@ from FileAnalyser1 import filetype
 import tkinter.ttk as ttk
 from FileAnalyser1 import txtfiles
 import tkinter.scrolledtext
-
+import cv2
 
 class MainWindow(tkinter.Frame):
     
@@ -31,10 +31,10 @@ class MainWindow(tkinter.Frame):
 
         tkinter.Frame.__init__(self, root)
 
-        filebutton = tkinter.Button(root, text="Open File for Selection button", width=70, command=self.getfile)
+        filebutton = tkinter.Button(root, text="Open File for Selection button", width=35, command=self.getfile)
         filebutton.pack()
 
-        quitbutton = tkinter.Button(root, text="Quit", width=70, command=quit)
+        quitbutton = tkinter.Button(root, text="Quit", width=10, command=quit)
         quitbutton.pack()
         
         #print("Window => %sx%s" % (self.WINDOW_WIDTH, self.WINDOW_HEIGHT))
@@ -119,7 +119,7 @@ class MainWindow(tkinter.Frame):
         results.pack()
         newscrollbar = tkinter.Scrollbar(self.uri_tab)
         newscrollbar.pack(side='right', fill='y')
-        newnotebook.add(self.uri_tab, text="Text")
+        newnotebook.add(self.uri_tab, text="URI")
     
     
     def show_img_result(self, img_result):
@@ -138,8 +138,8 @@ class MainWindow(tkinter.Frame):
     
     def show_vid_result(self, vid_result):
         self.vid_tab = ttk.Frame(newnotebook, width=self.TAB_WIDTH, height=self.TAB_HEIGHT)
-        results = ttk.Label(self.vid_tab, text=vid_result)
-        results.pack()
+        button = tkinter.Button(self.vid_tab, text="Play Video", width=15, command = lambda:self.play_video(vid_result))
+        button.pack()
         newnotebook.add(self.vid_tab, text="Video")
     
     
@@ -149,6 +149,19 @@ class MainWindow(tkinter.Frame):
         results.pack()
         newnotebook.add(self.csv_tab, text="CSV")
     
+    
+    def play_video(self, filepath):
+        cap = cv2.VideoCapture(filepath)
+        
+        while (cap.isOpened()):
+            ret, frame = cap.read()
+            cv2.imshow(filepath, frame)
+            if cv2.waitKey(30) & 0xFF == ord('q'):
+                break
+        
+        cap.release()
+        cv2.destroyAllWindows()
+        
 
     def getfile(self):   #this is the open file function linked back to the open file button
         selected_file = filedialog.askopenfilename(filetypes=[('All files', '*.*')])   #select and open a file

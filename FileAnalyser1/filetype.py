@@ -6,6 +6,7 @@ from FileAnalyser1 import jpegfiles
 from FileAnalyser1 import avifiles
 from FileAnalyser1 import csvfiles
 from FileAnalyser1.file_result import FileResult
+import re
 
 def analyse_file(selected_filename):   #this is the open file function linked back to the open file button
     
@@ -24,7 +25,6 @@ def analyse_file(selected_filename):   #this is the open file function linked ba
     # the window logic will not create a tab for that type of data
     #
     if selected_filename.endswith('.txt'):
-
         #txtfiles.newtxtfiles(selected_filename)          # create copies of the files
         file_details = txtfiles.get_file_details(selected_filename)  # get the file details
         txt_result = txtfiles.get_txt(selected_filename)  # get the file contents
@@ -32,16 +32,18 @@ def analyse_file(selected_filename):   #this is the open file function linked ba
         hex_result = txtfiles.get_hex(selected_filename)  # convert to hex
         uri_result = txtfiles.get_uri(selected_filename)  # retrieve URI's
 
-    elif selected_filename.endswith('.odt') or selected_filename.endswith('.doc'):
+    elif re.match('^.*\.(odt|doc)$', selected_filename, re.IGNORECASE):
         #docfiles.newdocfiles(selected_filename)          # create copies of the files
+        file_details = odtfiles.get_file_details(selected_filename)
         txt_result = odtfiles.get_txt(selected_filename)  
         bin_result = odtfiles.get_bin(selected_filename)  
         hex_result = odtfiles.get_hex(selected_filename)  
         uri_result = odtfiles.get_uri(selected_filename)  
         img_result = odtfiles.get_img(selected_filename)  
 
-    elif selected_filename.endswith('.avi'):
+    elif re.match('^.*\.(avi|mp4|mpeg|mkv)$', selected_filename, re.IGNORECASE):
         #docfiles.newdocfiles(selected_filename)             #create copies of the files
+        file_details = avifiles.get_file_details(selected_filename)
         bin_result = avifiles.get_bin(selected_filename)  
         hex_result = avifiles.get_hex(selected_filename)  
         aud_result = avifiles.get_aud(selected_filename)  
@@ -49,13 +51,15 @@ def analyse_file(selected_filename):   #this is the open file function linked ba
 
     elif selected_filename.endswith('.csv'):
         #docfiles.newdocfiles(selected_filename)             #create copies of the files
+        file_details = csvfiles.get_file_details(selected_filename)
         txt_result = csvfiles.get_txt(selected_filename)  
         bin_result = csvfiles.get_bin(selected_filename)  
         hex_result = csvfiles.get_hex(selected_filename)  
         uri_result = csvfiles.get_uri(selected_filename)  
 
-    elif selected_filename.endswith('.jpeg') or selected_filename.endswith('.jpg'):
+    elif re.match('^.*\.(jpeg|jpg|gif|png)$', selected_filename, re.IGNORECASE):
         #docfiles.newdocfiles(selected_filename)             #create copies of the files
+        file_details = jpegfiles.get_file_details(selected_filename)
         bin_result = jpegfiles.get_bin(selected_filename)  
         hex_result = jpegfiles.get_hex(selected_filename)  
         img_result = jpegfiles.get_img(selected_filename)  
