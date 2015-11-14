@@ -16,56 +16,46 @@ import re
     #newhexfile.write(_selectedfile)          #transfer the data to the new files
 
 
-def filedetailstxt(_selectedfile):       #preform file analysis on the original file
-
-    filename = os.path.basename(_selectedfile)          #file name
-    filesize = os.path.getsize(_selectedfile)               #file size
-    fileextension = ["This is a text file, find out more information about '*.txt' files at", ]         #file extension
-
-    txtdetailresult = str(filename) + str(filesize) + str(fileextension)        #create a string out of each piece of data and return to the main window
-    global _filedetailresult
-    _filedetailresult = txtdetailresult
+def get_file_details(selectedfile):       #preform file analysis on the original file
+    filename = os.path.basename(selectedfile)          #file name
+    filesize = os.path.getsize(selectedfile)               #file size
+    fileextension = ["This is a text file, find out more information about '*.txt' files at", ] # file extension
+    
+    # create a string out of each piece of data and return to the main window
+    return "Filename: %s\nSize: %s bytes\nType: %s" % (str(filename), str(filesize), str(fileextension)) 
 
 
-def bincontxt(_selectedfile):
-
-    binaryconvert = ' '.join(format(ord(x), 'b') for x in _selectedfile)   #NEED TO CONFIRM THE FULL WORKING OF THIS!!!
-    global _binaryresult
-    _binaryresult = binaryconvert
-
-
-def hexcontxt(_selectedfile):
-    hexconvert = " ".join(hex(ord(n)) for n in _selectedfile)               #FIGURE OUT THIS LINE FULLY!!!
-    global _hexresult
-    _hexresult = hexconvert
+def get_txt(selectedfile):
+    with open (selectedfile, "r") as the_file:
+        txt_content = the_file.read()
+    
+    return txt_content
 
 
-def uritxt(_selectedfile):                                      #THIS ISNT WORKING NEED TO CONFIRM REGEX SEARCH
-    uriresult = re.findall(r'(www?://\S+)', _selectedfile)
-    global _uriresult
-    _uriresult = uriresult
+def get_bin(selectedfile):
+    with open (selectedfile, "r") as the_file:
+        txt_content = the_file.read()
+    
+    binary = ' '.join(format(ord(x), 'b') for x in txt_content)
+    return binary
 
 
-def imagestxt(_selectedfile):
-    noimagestxt = ["There are no images in a text file"]
-    global _imageresult
-    _imageresult = noimagestxt
+def get_hex(selectedfile):
+    with open (selectedfile, "r") as the_file:
+        file_content = the_file.read()
+    
+    hex_result = ' '.join(hex(ord(n)) for n in file_content)
+    return hex_result
 
 
-    #def kwictxt(_selectedfile):            #CAN'T FIND LIBRARY FOR THIS
-
-
-def audiotxt(_selectedfile):
-    noaudiotxt = ["There is audio in a text file"]
-    global _audioresult
-    _audioresult = noaudiotxt
-
-
-def videotxt(_selectedfile):
-    novideotxt = ["There is no video in a text file"]
-    global _videoresult
-    _videoresult = novideotxt
-
-
-
+def get_uri(selectedfile):
+    URIs = []
+    with open(selectedfile, 'r') as f:
+        for line in f:
+            URIs.extend( re.findall('(http[s]?:\/\/\S+|www\.\S+|ftp:\/\/\S+|file:\/\/\S+)', line, re.IGNORECASE | re.MULTILINE) )
+        
+    if URIs:
+        return "\n".join(URIs)
+    else:
+        return None
 

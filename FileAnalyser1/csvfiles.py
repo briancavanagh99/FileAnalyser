@@ -11,55 +11,48 @@ import re
 #import binascii
 
 
-def filedetailsA(_selectedfile):       #preform file analysis on the original file
-
-    filename = os.path.basename(_selectedfile)          #file name
-    filesize = os.path.getsize(_selectedfile)               #file size
-    fileextension = ["This is a csv file"]         #file extension
-
-    filedetailresult = str(filename) + str(filesize) + str(fileextension)        #create a string out of each piece of data and return to the main window
-    global _filedetailresult
-    _filedetailresult = filedetailresult
+def get_file_details(selectedfile):       #preform file analysis on the original file
+    filename = os.path.basename(selectedfile)          #file name
+    filesize = os.path.getsize(selectedfile)               #file size
+    fileextension = ["This is a csv file"]         #file extension 
+    
+    # create a string out of each piece of data and return to the main window
+    return "Filename: %s\nSize: %s bytes\nType: %s" % (str(filename), str(filesize), str(fileextension))
 
 
-def binconcsv(_selectedfile):
-
-    binaryconvert = ' '.join(format(ord(x), 'b') for x in _selectedfile)   #NEED TO CONFIRM THE FULL WORKING OF THIS!!!
-    global _binaryresult
-    _binaryresult = binaryconvert
-
-
-def hexconcsv(_selectedfile):
-    hexconvert = " ".join(hex(ord(n)) for n in _selectedfile)               #FIGURE OUT THIS LINE FULLY!!!
-    global _hexresult
-    _hexresult = hexconvert
+def get_txt(selectedfile):
+    with open (selectedfile, "r") as the_file:
+        txt_content = the_file.read()
+    
+    return txt_content
 
 
-def uricsv(_selectedfile):                                      #THIS ISNT WORKING NEED TO CONFIRM REGEX SEARCH
-    uriresult = re.findall(r'(www?://\S+)', _selectedfile)
-    global _uriresult
-    _uriresult = uriresult
+def get_bin(selectedfile):
+    with open (selectedfile, "r") as the_file:
+        txt_content = the_file.read()
+    
+    binary = ' '.join(format(ord(x), 'b') for x in txt_content)
+    return binary
 
 
-def imagescsv(_selectedfile):               #CHANGE THIS TO READ AND PRINT csv DATA
-    noimagescsv = ["There are no images in a csv file"]
-    global _imageresult
-    _imageresult = noimagescsv
+def get_hex(selectedfile):
+    with open (selectedfile, "r") as the_file:
+        file_content = the_file.read()
+    
+    hex_result = ' '.join(hex(ord(n)) for n in file_content)
+    return hex_result
 
 
-    #def kwiccsv(_selectedfile):            #CAN@T FIND LIBRARY FOR THIS
-
-
-def audiocsv(_selectedfile):
-    noaudiocsv = ["There is audio in a csv file"]
-    global _audioresult
-    _audioresult = noaudiocsv
-
-
-def videocsv(_selectedfile):
-    novideocsv = ["There is no video in a csv file"]
-    global _videoresult
-    _videoresult = novideocsv
+def get_uri(selectedfile):
+    URIs = []
+    with open(selectedfile, 'r') as f:
+        for line in f:
+            URIs.extend( re.findall('(http[s]?:\/\/\S+|www\.\S+|ftp:\/\/\.\S+|file:\/\/)', line, re.IGNORECASE | re.MULTILINE) )
+        
+    if URIs:
+        return "\n".join(URIs)
+    else:
+        return None
 
 
 
