@@ -8,7 +8,10 @@ from FileAnalyser1 import filetype
 import tkinter.ttk as ttk
 from FileAnalyser1 import txtfiles
 import tkinter.scrolledtext
-import cv2
+
+# this opencv module needs to be installed to get video playback working
+# windows self-extractor can be found here: https://sourceforge.net/projects/opencvlibrary/files/opencv-win/3.0.0/
+import cv2  
 
 class MainWindow(tkinter.Frame):
     
