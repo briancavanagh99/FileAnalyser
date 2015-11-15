@@ -9,56 +9,49 @@ import os
 import re
 #import binascii
 
-def filedetailsdoc(_selectedfile):       #preform file analysis on the original file
-
-    filename = os.path.basename(_selectedfile)          #file name
-    filesize = os.path.getsize(_selectedfile)               #file size
+def get_file_details(selectedfile):       #preform file analysis on the original file
+    filename = os.path.basename(selectedfile)          #file name
+    filesize = os.path.getsize(selectedfile)               #file size
     fileextension = ["This is a doc file, it can be opened as a word or openoffice document"]
+    
+    # create a string out of each piece of data and return to the main window
+    return "Filename: %s\nSize: %s bytes\nType: %s" % (str(filename), str(filesize), str(fileextension)) 
 
-    docdetailresult = str(filename) + str(filesize) + str(fileextension)        #create a string out of each piece of data and return to the main window
-    global _filedetailresult
-    _filedetailresult = docdetailresult
+def get_txt(selectedfile):
+    # TODO: get the text content of the file 
+    return None
 
-
-def bincondoc(_selectedfile):
-
-    binaryconvert = ' '.join(format(ord(x), 'b') for x in _selectedfile)   #NEED TO CONFIRM THE FULL WORKING OF THIS!!!
-    global _binaryresult
-    _binaryresult = binaryconvert
-
-
-def hexcondoc(_selectedfile):
-    hexconvert = " ".join(hex(ord(n)) for n in _selectedfile)               #FIGURE OUT THIS LINE FULLY!!!
-    global _hexresult
-    _hexresult = hexconvert
+def get_bin(selectedfile):
+    with open (selectedfile, "r") as the_file:
+        txt_content = the_file.read()
+    
+    binary = ' '.join(format(ord(x), 'b') for x in txt_content)
+    return binary
 
 
-def uridoc(_selectedfile):                                      #THIS ISNT WORKING NEED TO CONFIRM REGEX SEARCH
-    uriresult = re.findall(r'(www?://\S+)', _selectedfile)
-    global _uriresult
-    _uriresult = uriresult
+def get_hex(selectedfile):
+    with open (selectedfile, "r") as the_file:
+        file_content = the_file.read()
+    
+    hex_result = ' '.join(hex(ord(n)) for n in file_content)
+    return hex_result
 
 
-def imagesdoc(_selectedfile):
-    noimagesdoc = ["There are no images in a odt or doc file"]
-    global _imageresult
-    _imageresult = noimagesdoc
+def get_uri(selectedfile):
+    URIs = []
+    with open(selectedfile, 'r') as f:
+        for line in f:
+            URIs.extend( re.findall('(http[s]?:\/\/\S+|www\.\S+|ftp:\/\/\.\S+|file:\/\/)', line, re.IGNORECASE | re.MULTILINE) )
+        
+    if URIs:
+        return "\n".join(URIs)
+    else:
+        return None
 
 
-    #def kwicdoc(_selectedfile):            #CAN'T FIND LIBRARY FOR THIS
-
-
-def audiodoc(_selectedfile):
-    noaudiodoc = ["There is audio in a doc file"]
-    global _audioresult
-    _audioresult = noaudiodoc
-
-
-def videodoc(_selectedfile):
-    novideodoc = ["There is no video in a doc file"]
-    global _videoresult
-    _videoresult = novideodoc
-
+def get_img(self):
+    # TODO: find and pull out images in the doc
+    return None
 
 
 
