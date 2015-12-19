@@ -1,5 +1,5 @@
+from __future__ import division
 __author__ = 'cavanaghb'
-
 #file for parent window that all other windows will become a child of
 
 import tkinter
@@ -29,16 +29,22 @@ class MainWindow(tkinter.Frame):
     csv_tab = None
     aud_tab = None
     vid_tab = None
+    
+    screen_width = None
+    screen_height = None
 
-    def __init__(self, root):             #first window dialog to open
+    def __init__(self, root, width, height):             #first window dialog to open
 
         tkinter.Frame.__init__(self, root)
 
-        filebutton = tkinter.Button(root, text="Open File for Selection button", width=35, command=self.getfile)
+        filebutton = tkinter.Button(root, text="Open File for Selection", width=35, command=self.getfile)
         filebutton.pack()
 
         quitbutton = tkinter.Button(root, text="Quit", width=10, command=quit)
         quitbutton.pack()
+        
+        self.screen_width = width
+        self.screen_height = height
         
         #print("Window => %sx%s" % (self.WINDOW_WIDTH, self.WINDOW_HEIGHT))
         #print("Tabs => %sx%s" % (self.TAB_WIDTH, self.TAB_HEIGHT))
@@ -127,9 +133,13 @@ class MainWindow(tkinter.Frame):
     
     def show_img_result(self, img_result):
         self.img_tab = ttk.Frame(newnotebook, width=self.TAB_WIDTH, height=self.TAB_HEIGHT)
-        results = ttk.Label(self.img_tab, text=img_result)
-        results.pack()
-        newnotebook.add(self.img_tab, text="Images")
+        button = tkinter.Button(self.img_tab, text="View Image", width=15, command = lambda:self.show_image(img_result))
+        button.pack()
+        newnotebook.add(self.img_tab, text="Image")
+#         self.img_tab = ttk.Frame(newnotebook, width=self.TAB_WIDTH, height=self.TAB_HEIGHT)
+#         results = ttk.Label(self.img_tab, text=img_result)
+#         results.pack()
+#         newnotebook.add(self.img_tab, text="Images")
     
     
     def show_aud_result(self, aud_result):
@@ -163,6 +173,14 @@ class MainWindow(tkinter.Frame):
                 break
         
         cap.release()
+        cv2.destroyAllWindows()
+        
+        
+    def show_image(self, filename):
+        img = cv2.imread(filename)
+        cv2.namedWindow(filename, cv2.WINDOW_AUTOSIZE | cv2.WINDOW_KEEPRATIO)
+        cv2.imshow(filename, img)
+        cv2.waitKey(0)
         cv2.destroyAllWindows()
         
 
@@ -209,7 +227,9 @@ class MainWindow(tkinter.Frame):
 if __name__=='__main__': # run the main instance to start the program
     root = tkinter.Tk()
     newnotebook = ttk.Notebook(root)
-    MainWindow(root).pack()
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    MainWindow(root, screen_width, screen_height).pack()
     root.geometry("%sx%s+200+50" % (MainWindow.WINDOW_WIDTH, MainWindow.WINDOW_HEIGHT))
     root.title('File Analysis Tool')
 

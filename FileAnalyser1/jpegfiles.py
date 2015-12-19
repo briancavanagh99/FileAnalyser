@@ -21,25 +21,27 @@ def get_file_details(selectedfile):       #preform file analysis on the original
 
 
 def get_bin(selectedfile):
-    with open (selectedfile, "r") as the_file:
+    with open (selectedfile, "r", encoding="ISO-8859-1") as the_file:
         txt_content = the_file.read()
     
     binary = ' '.join(format(ord(x), 'b') for x in txt_content)
-    return binary
+    return None
+#     return binary
 
 
 def get_hex(selectedfile):
-    with open (selectedfile, "r") as the_file:
+    with open (selectedfile, "r", encoding="ISO-8859-1") as the_file:
         file_content = the_file.read()
     
     hex_result = ' '.join(hex(ord(n)) for n in file_content)
-    return hex_result
+    return None
+#     return hex_result
 
 
-def get_img(self):
+def get_img(selectedfile):
     # TODO: extract the image data or just return the filename
     # depending on whats needed to show the image
-    return None
+    return selectedfile
 
 
 
